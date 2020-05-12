@@ -1,0 +1,21 @@
+.calendar-toolbar {
+    margin-bottom: 10px;
+}
+
+.calendar-month-row {
+    height: 75px;
+}
+
+.calendar-prior-months-date {
+    color: #DDD;
+}
+
+.calendar-current-date {
+    text-align: center;
+    display: inline-block;
+    width: 115px;
+}
+
+.currentDay {
+    color: red;
+}

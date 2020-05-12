@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <head>
+        <title>Time Manager</title>
+        <script src="https://kit.fontawesome.com/4aef102012.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style/clockpicker.css">
+        <link rel="stylesheet" href="./style/standalone.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Time management</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Calendar <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Friends</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Friends Requests</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Event Requests</a>
+                    </li>
+                  </ul>
+                </div>
+            </nav>
+          </header>
+        <br>
+        <h1 class="d-flex justify-content-center">Add Event</h1>
+        <div class="containers d-flex justify-content-center">
+            <form class="col-3">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <label class="mb-0" for="event_title">Event Title</label>
+                            <input type="text" class="form-control mb-2" id="event_title" placeholder="Event Title" style="border-radius: 0.25rem; border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;">
+                            <label class="mb-0" for="event_title">Start Time</label>
+                            <div class="input-group clockpicker">
+                                <input type="text" class="form-control" value="00:00">
+                            </div>
+                            <label class="mb-0 mt-1" for="event_title">End Time</label>
+                            <div class="input-group clockpicker">
+                                <input type="text" class="form-control" value="00:00">
+                            </div>
+                            <div class="mt-1">
+                                <input type="checkbox" aria-label="Checkbox for following text input" value="Is time fixed?">
+                                <label for="fixedTime">Is time fixed?</label>
+                            </div>
+                            <ul class="list-group border border-light mb-0 mt-1 p-2" style="border-radius: 0.25rem; border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;">
+                                <label for="event_title">Participants: </label>
+                                <li class="d-flex justify-content-between">
+                                    <label class="">owner@gmail.com</label>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <label class="">guest_mail@gmail.com</label>
+                                    <div>
+                                        <i class="far fa-edit text-info"></i>
+                                        <i class="far fa-trash-alt text-danger"></i>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <button type="button" class="btn-sm btn-block btn-success">Add <i class="fas fa-user-plus"></i></button>
+                                </li>
+                            </ul>
+                            <label class="mb-0" for="location">Location</label>
+                            <input type="text" class="form-control mb-2" id="event_title" placeholder="Location" style="border-radius: 0.25rem; border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;">
+                            <img src="./images/map.png" class="img-fluid" alt="Responsive image">
+                        </li>
+                        <button type="button" class="btn btn btn-primary my-2 px-2">Create Event</button>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+    </body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+    <script type="text/javascript" src="./js/clockpicker.js"></script>
+    <script type="text/javascript">
+        $('.clockpicker').clockpicker({
+            autoclose: true
+        });
+        </script>
+</html>
