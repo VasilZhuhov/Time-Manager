@@ -45,8 +45,6 @@
       } else {
         this.view = $view[0];
       }
-      console.log($currentDate);
-      console.log($currentDate);
 
       if ($currentDate.length > 0) {
         var dayFormat = $currentDate.data('day-format'),
@@ -80,11 +78,11 @@
     }
 
     Calendar.prototype.renderDayView = function () {
-      //$(this.elem).append('Day View');
+      $(this.elem).append('Day View');
     }
 
     Calendar.prototype.renderWeekView = function () {
-      //$(this.elem).append('Week View');
+      $(this.elem).append('Week View');
     }
 
     Calendar.prototype.renderMonthView = function () {
@@ -108,14 +106,25 @@
         tr.className = 'calendar-month-row';
         for (i = 0; i < 7; i++) {
           td = document.createElement('td');
-          td.appendChild(document.createTextNode(datetime.format('D')));
+          let a = document.createElement('a');
+          let div = document.createElement('div');
+          div.appendChild(document.createTextNode(datetime.format('D')));
+
           if (month !== datetime.month()) {
-            td.className = 'calendar-prior-months-date';
+            div.className = 'calendar-prior-months-date';
           }
-        //   console.log(td.textContent);
-          if(td.textContent == currDay && currMonth == month + 1){
-            td.classList.add("currentDay");
+          if(div.textContent == currDay && currMonth == month + 1 && month == datetime.month()){
+            div.classList.add("currentDay");
           }
+          a.href = `${this.options.datetime.year()}/${month+1}/${div.innerHTML}/events`
+
+          div.style.width = '100%';
+          div.style.height = '100%';
+          div.style.paddingTop = '1.5rem';
+          div.style.paddingBottom = '1.5rem';
+
+          a.appendChild(div);
+          td.appendChild(a);
           tr.appendChild(td);
           datetime.add(1, 'day');
         }
@@ -169,7 +178,6 @@
 
     Calendar.prototype.today = function () {
       this.options.datetime = moment();
-      console.log(moment());
       this.render();
     }
 
