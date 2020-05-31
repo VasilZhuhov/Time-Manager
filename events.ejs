@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time Management</title>
+        <script src="https://kit.fontawesome.com/4aef102012.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+          <%- include ('header.ejs') %>
+        </header>
+        <br>
+        <h1 class="d-flex justify-content-center">Events for Today: <%= day %>.<%= month %>.<%= year %></h1>
+        <div class="containers d-flex justify-content-center">
+            <div class="list-group col-3">
+              <% for(let event of events) {%>
+                <div class="list-group-item align-items-center">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="mb-1"><%= event.title %></h5>
+                        <div>
+                            <a href="/<%= year %>/<%= month %>/<%= day %>/<%=event.title %>/editEvent"><i class="far fa-edit text-info"></i></a>
+                            <a href="/<%= year %>/<%= month %>/<%= day %>/<%=event.title %>/deleteEvent"><i class="far fa-trash-alt text-danger"></i></a>
+                        </div>
+                    </div>
+                    <small class="d-block mb-1"><i class="fas fa-clock"></i> <%= event.startTime %> - <%= event.endTime %></small>
+                    <small class="d-block mb-1"><i class="fas fa-users"></i> Participants: <a href=""><%= event.participants %></a></small>
+                    <small class="d-block mb-1"><i class="fas fa-user"></i> Created by: <%= event.participantsEmails[0] %></small>
+                    <span><i class="fas fa-map-marker-alt"></i> <%= event.location %></span>
+                </div>
+                <% } %>
+
+                <br>
+                <a href="<%= url %>/addEvent" class="btn btn-success mb-1">Add Event</a>
+                <a href="<%= url %>/schedule" class="btn btn-primary">Schedule It!</a>
+            </div>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

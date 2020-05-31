@@ -1,4 +1,5 @@
 body{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     margin-top:20px;
     background:#FAFAFA
 }
@@ -80,4 +81,18 @@ img.profile-photo-lg {
 
 .text-green {
     color: #8dc63f;
+}
+
+button.btn-sm.btn-outline-danger.float-right:hover{
+  background-color: #ff3547 !important;
+  color: white !important;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+button.btn-sm.btn-outline-success.float-right:hover {
+  background-color: #00c851 !important;
+  color: white !important;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }

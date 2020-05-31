@@ -1,6 +1,6 @@
 body{
     margin-top:20px;
-    background:#FAFAFA;    
+    background:#FAFAFA;
 }
 
 .people-nearby .google-maps{
@@ -28,4 +28,18 @@ img.profile-photo-lg{
   height: 80px;
   width: 80px;
   border-radius: 50%;
+}
+
+button.btn-sm.btn-outline-danger.float-right:hover{
+  background-color: #ff3547 !important;
+  color: white !important;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+button.btn-sm.btn-outline-success.float-right:hover {
+  background-color: #00c851 !important;
+  color: white !important;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }

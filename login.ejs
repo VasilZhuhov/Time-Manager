@@ -6,6 +6,9 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <%- include ('header.ejs') %>
+        </header>
         <h1 class="d-flex justify-content-center">Login</h1>
         <div class="containers d-flex justify-content-center">
             <form class="col-3" method="POST" action="/login">
@@ -23,7 +26,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-sm btn-block">Sing In</button>
                     <br>
-                    <a href="/events"><button type="button" class="btn btn-secondary btn-sm btn-block">Continue without registration</button></a>
+                    <a href="/unregistered"><button type="button" class="btn btn-secondary btn-sm btn-block">Continue without registration</button></a>
                     <small id="emailHelp" class="form-text text-muted">If you haven't register yet, click <a href="">here</a> to sign up.</small>
                 </form>
         </div>
